@@ -7,7 +7,7 @@
 * Weakness: CWE-703[Improper Check or Handling of Exceptional Conditions]
 * Severity: Moderate 5.7/10
 * Vector String: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:N/I:N/A:H
-* Fix commit link: https://github.com/CE-PhoenixCart/PhoenixCart/commit/436e87e11517d5f581312756c8c8904aaea1371b
+* Fix commit link: https://github.com/CE-PhoenixCart/PhoenixCart/commit/436e87e11517d5f581312756c8c8904aaea1371b#diff-6e7b4ef70f8aeb2fae113acc2686a4ffc46addee32d15231aeec643ae5b7f10d
 
 **Vulnerability-**
 Unvalidated Review Star Rating Causes Admin Panel UI Lockout
@@ -17,6 +17,12 @@ The application allows customers to leave product reviews by selecting a star ra
 Once this malformed review is saved, the admin panel — specifically the reviews.php page — becomes unresponsive. All review entries disappear from the interface, and JavaScript-based dropdown menus and admin action buttons across the dashboard fail to work due to frontend rendering or script errors.
 The only recovery method for the administrator is to manually navigate to /customers.php and delete the affected customer account, after which the panel functionality is restored.
 This vulnerability causes a persistent denial of service for the admin and results in loss of visibility and control over the store's review management system.
+
+**Vulnerable Code-**
+$star_rating = round($this->rating, 0, PHP_ROUND_HALF_UP);
+
+**Fixed Code-**
+$star_rating = round(min($this->rating, 5), 0, PHP_ROUND_HALF_UP);
 
 **PoC-**
 https://drive.google.com/file/d/1oF3L0M9KJSpCMe7GfJajIDYyNK6vZdk_/view?usp=drive_link
