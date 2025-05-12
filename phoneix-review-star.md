@@ -4,7 +4,7 @@
 * Package: includes/system/versioned/1.0.8.1/star_rating.php
 * Affected versions: <=1.1.0.2
 * Patched version: 1.1.0.3
-* Weakness: CWE-703
+* Weakness: CWE-703[Improper Check or Handling of Exceptional Conditions]
 * Severity: Moderate 5.7/10
 * Vector String: CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:N/I:N/A:H
 * Fix commit link: https://github.com/CE-PhoenixCart/PhoenixCart/commit/436e87e11517d5f581312756c8c8904aaea1371b
