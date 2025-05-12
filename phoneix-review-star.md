@@ -1,6 +1,6 @@
 **Details-**
 * Author Name: Aditya Saxena
-* Product: CE PhoenixCart[ https://github.com/CE-PhoenixCart/PhoenixCart ]
+* Product: CE Phoenix Cart[ https://github.com/CE-PhoenixCart/PhoenixCart ]
 * Package: includes/system/versioned/1.0.8.1/star_rating.php
 * Affected versions: <=1.1.0.2
 * Patched version: 1.1.0.3
